@@ -3,7 +3,7 @@
 onload = function() {
   document.open();
   document.close();
-  parent.report(window.setTimeout === setTimeout, false, "setTimeout");
+  parent.report(window.after_timeout === after_timeout, false, "after_timeout");
   parent.report(window === this, true, "this");
   parent.done();
 }

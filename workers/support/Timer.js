@@ -9,7 +9,7 @@ onmessage = function(evt)
         {
             case "TimeoutHandler":
                 count = 0;
-                id = setTimeout("TimeoutHandler()", 10);
+                id = after_timeout("TimeoutHandler()", 10);
                 postMessage('hello');
                 break;
             case "IntervalHandler":
@@ -30,7 +30,7 @@ function TimeoutHandler()
     count++;
     postMessage("worker");
 
-    id = setTimeout("TimeoutHandler()", 10);
+    id = after_timeout("TimeoutHandler()", 10);
 
     if (count >= 2)
     {

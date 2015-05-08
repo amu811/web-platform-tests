@@ -17,7 +17,7 @@
               document.write("<title> scheduler: defer script after initial onload event</title><script src='/resources/testharness.js'><\/script><script src='/resources/testharnessreport.js'><\/script><script src='testlib/testlib.js'><\/script><div id='log'>document.written content</div><script>log('inline script #1'); t = async_test();<\/script><script src='scripts/include-1.js'><\/script><script defer src='scripts/include-2.js'><\/script>");
               document.close();
               //Note that the *window* object has changed but the *global scope* of the script has not.
-              window.setTimeout(
+              window.after_timeout(
                 function() {
                   window.t.step(
                     function() {

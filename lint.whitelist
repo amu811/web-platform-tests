@@ -102,3 +102,8 @@ PARSE-FAILED:ext-xhtml-pubid/the-xhtml-syntax/parsing-xhtml-documents/xhtml-pubi
 
 # Test generation files containing print statements
 PRINT STATEMENT:dom/nodes/Document-createElement-namespace-tests/generate.py
+
+SET TIMEOUT:*-manual.*
+SET TIMEOUT:common/*
+SET TIMEOUT:conformance-checkers/*
+SET TIMEOUT:html/editing/dnd/*

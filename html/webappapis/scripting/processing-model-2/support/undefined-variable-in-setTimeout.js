@@ -1,5 +1,5 @@
-setTimeout('undefined_variable;', 10);
-setTimeout(function(){
+after_timeout('undefined_variable;', 10);
+after_timeout(function(){
     t.step(function(){
         assert_true(ran, 'ran');
         t.done();

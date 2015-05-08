@@ -15,7 +15,7 @@ t.step(function() {
     sessionStorage[uuid] = 'true';
     var ws = new WebSocket(SCHEME_DOMAIN_PORT+'/echo');
     ws.onopen = t.step_func(function(e) {
-      setTimeout(t.step_func(function() {
+      after_timeout(t.step_func(function() {
         assert_unreached('document was not discarded');
       }), 1000);
       controller.navigate();

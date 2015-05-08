@@ -3,13 +3,13 @@ function x() {
   postMessage(1);
   throw new Error();
 }
-setTimeout(x, 0);
+after_timeout(x, 0);
 close();
-setTimeout(x, 0);
+after_timeout(x, 0);
 /*
 -->
 <!doctype html>
-<title>close() and setTimeout</title>
+<title>close() and after_timeout</title>
 <script src="/resources/testharness.js"></script>
 <script src="/resources/testharnessreport.js"></script>
 <div id="log"></div>
@@ -21,7 +21,7 @@ worker.onmessage = function(e) {
 worker.onerror = function(e) {
   assert_unreached("Got error");
 };
-setTimeout(done, 2000);
+after_timeout(done, 2000);
 </script>
 <!--
 */

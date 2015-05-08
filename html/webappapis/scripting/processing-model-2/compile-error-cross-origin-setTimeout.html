@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
  <head>
-  <title>window.onerror - compile error in cross-origin setTimeout</title>
+  <title>window.onerror - compile error in cross-origin after_timeout</title>
   <script src="/resources/testharness.js"></script>
   <script src="/resources/testharnessreport.js"></script>
  </head>
@@ -25,7 +25,7 @@
         t_col.done();
     }
     var script = document.createElement('script');
-    script.src = location.href.replace('://', '://www1.').replace(/\/[^\/]+$/, '/support/syntax-error-in-setTimeout.js');
+    script.src = location.href.replace('://', '://www1.').replace(/\/[^\/]+$/, '/support/syntax-error-in-after_timeout.js');
     document.body.appendChild(script);
   </script>
  </body>

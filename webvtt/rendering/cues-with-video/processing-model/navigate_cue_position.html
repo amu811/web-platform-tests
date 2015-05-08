@@ -14,9 +14,9 @@ onload = function() {
         delete sessionStorage[uuid]
         takeScreenshotDelayed(100);
     } else {
-        setTimeout(function() {
-            frame.location.assign('data:text/html,<body onload="setTimeout(function(){history.back()}, 100); sessionStorage[\'' + uuid + '\'] = \'true\';">x');
-            setTimeout(function() {
+        after_timeout(function() {
+            frame.location.assign('data:text/html,<body onload="after_timeout(function(){history.back()}, 100); sessionStorage[\'' + uuid + '\'] = \'true\';">x');
+            after_timeout(function() {
                 delete sessionStorage[uuid];
                 takeScreenshot();
             }, 500);

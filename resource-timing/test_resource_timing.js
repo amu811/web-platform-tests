@@ -120,14 +120,14 @@ function poll_for_stylesheet_load(expected_entry) {
                     hasRules = false;
                 }
                 if (hasRules) {
-                    setTimeout(function() {
+                    after_timeout(function() {
                         resource_load(expected_entry);
                     }, 200);
                     return;
                 }
             }
         }
-        setTimeout(inner, 100);
+        after_timeout(inner, 100);
     }
     inner();
 }

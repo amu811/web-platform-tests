@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
  <head>
-  <title>window.onerror - compile error in setTimeout</title>
+  <title>window.onerror - compile error in after_timeout</title>
   <script src="/resources/testharness.js"></script>
   <script src="/resources/testharnessreport.js"></script>
  </head>
@@ -20,8 +20,8 @@
         assert_equals(b, location.href, 'second arg');
         assert_equals(typeof c, 'number', 'third arg');
     });
-    setTimeout("{", 10);
-    setTimeout(function(){
+    after_timeout("{", 10);
+    after_timeout(function(){
         t.step(function(){
             assert_true(ran, 'ran');
             t.done();

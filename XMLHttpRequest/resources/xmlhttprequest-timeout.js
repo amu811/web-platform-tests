@@ -109,7 +109,7 @@ RequestTracker.prototype = {
 
     if (this.mustReset) {
       var resetTo = this.resetTo;
-      self.setTimeout(function() {
+      self.after_timeout(function() {
         req.timeout = resetTo;
       }, this.resetAfter);
     }
@@ -202,7 +202,7 @@ AbortedRequest.prototype = {
     }
 
     if (!this.shouldAbort) {
-      self.setTimeout(function() {
+      self.after_timeout(function() {
         try {
           _this.noEventsFired();
         }
@@ -219,7 +219,7 @@ AbortedRequest.prototype = {
         abortReq();
       }
       else {
-        self.setTimeout(abortReq, this.abortDelay);
+        self.after_timeout(abortReq, this.abortDelay);
       }
     }
   },
@@ -302,7 +302,7 @@ var TestRequests = [];
 var TestCounter = {
   testComplete: function() {
     // Allow for the possibility there are other events coming.
-    self.setTimeout(function() {
+    self.after_timeout(function() {
       TestCounter.next();
     }, TIME_NORMAL_LOAD);
   },

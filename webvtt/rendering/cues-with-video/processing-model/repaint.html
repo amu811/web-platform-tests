@@ -39,11 +39,11 @@ var t = v.addTextTrack('subtitles');
 t.mode = "showing";
 t.addCue(new VTTCue(0, 100, 'PASS'));
 v.onplaying = function() {
-  setTimeout(function() {
+  after_timeout(function() {
     v.pause();
-    setTimeout(function() {
+    after_timeout(function() {
       c.style.visibility = 'hidden';
-      setTimeout(takeScreenshot, 100);
+      after_timeout(takeScreenshot, 100);
     }, 100);
   }, 100);
 };

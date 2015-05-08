@@ -9,8 +9,8 @@ var t = async_test();
 var iframe;
 onload = t.step_func(function() {
   var iframe = document.getElementsByTagName("iframe")[0];
-  iframe.contentWindow.setTimeout(t.step_func(function() {assert_unreached()}), 100);
+  iframe.contentWindow.after_timeout(t.step_func(function() {assert_unreached()}), 100);
   iframe.contentDocument.open()
-  setTimeout(function() {t.done();}, 200);
+  after_timeout(function() {t.done();}, 200);
 });
 </script>

@@ -167,7 +167,7 @@ function runTests(tests) {
 
 function trackLoaded(e) {
     var track = e.target;
-    setTimeout(removeElm, 0, track.parentNode);
+    after_timeout(removeElm, 0, track.parentNode);
     var cue = track.track.cues[0];
     var frag = cue.getCueAsHTML();
     var got = test_serializer(frag);
@@ -179,7 +179,7 @@ function trackLoaded(e) {
 }
 
 function trackError(e) {
-    setTimeout(removeElm, 0, e.target.parentNode);
+    after_timeout(removeElm, 0, e.target.parentNode);
     assert_unreached('got error event');
     this.done();
 }
